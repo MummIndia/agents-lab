@@ -1,0 +1,3 @@
+L'objectif est entièrement atteint et vérifié : `dedup.js` exporte `dedupeContacts(list)` (dédup d'email insensible à la casse, sans dépendance externe), `dedup.test.js` couvre les 3 cas requis avec `node:test`, et `node --test` passe au vert (3 pass / 0 fail).
+
+OBJECTIF_ATTEINT
