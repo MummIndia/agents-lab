@@ -1,3 +1,37 @@
-L'objectif est entièrement atteint et vérifié : `dedup.js` exporte `dedupeContacts(list)` (dédup d'email insensible à la casse, sans dépendance externe), `dedup.test.js` couvre les 3 cas requis avec `node:test`, et `node --test` passe au vert (3 pass / 0 fail).
+
+Claude configuration file not found at: /home/node/.claude.json
+A backup file exists at: /home/node/.claude/backups/.claude.json.backup.1782685595712
+You can manually restore it by running: cp "/home/node/.claude/backups/.claude.json.backup.1782685595712" "/home/node/.claude.json"
+
+
+Claude configuration file not found at: /home/node/.claude.json
+A backup file exists at: /home/node/.claude/backups/.claude.json.backup.1782685595712
+You can manually restore it by running: cp "/home/node/.claude/backups/.claude.json.backup.1782685595712" "/home/node/.claude.json"
+
+
+Claude configuration file not found at: /home/node/.claude.json
+A backup file exists at: /home/node/.claude/backups/.claude.json.backup.1782685595712
+You can manually restore it by running: cp "/home/node/.claude/backups/.claude.json.backup.1782685595712" "/home/node/.claude.json"
+
+L'objectif est entièrement atteint et vérifié. Récapitulatif de cette itération :
+
+## Travail réalisé
+
+**1. Données vérifiées (correction d'erreurs des hypothèses initiales)**
+- Corrigé une **erreur de code INSEE** : Lasalle = `30140` (le code `30139` du GOAL est en réalité Lanuéjols).
+- Collecté et croisé les données INSEE **RP2023** (millésime plus récent que le RP2022 supposé) pour les deux communes, le Gard et la France (Focus n°309).
+
+**2. PDF produit : `Plaidoyer_logement_Cevennes2050.pdf`** (4 pages, généré par `generate_pdf.py`, reproductible)
+- En-tête avec **logo Cévennes 2050** + titre « Le logement confisqué ? »
+- 3 chiffres-clés encadrés, tableau comparatif (communes vs Gard vs France)
+- **2 graphiques** matplotlib (répartition du parc ; taux de non-occupation)
+- Mise en perspective marché (revenus, faible part HLM, renvoi DVF), angle mort des meublés (loi « Le Meur »), tendance 2017→2023, limites méthodologiques, **5 leviers d'action**, sources cliquables.
+
+**3. Vérifications**
+- Arithmétique contrôlée par script : 628+312+77 = 1 017 ; 1 347+269+265 = 1 881 ✓
+- **Erreur d'arrondi corrigée** : taux Lasalle = **38,2 %** (cohérent avec RP 61,8 %), pas 38,3 %.
+- Rendu visuel page par page confirmé (logo net, aucune surcharge, typographie française).
+
+Chiffres clés : **Lasalle 38,2 %** et **Saint-Jean-du-Gard 28,4 %** de logements non occupés à l'année, contre ~18 % en France — tous sourcés et datés.
 
 OBJECTIF_ATTEINT

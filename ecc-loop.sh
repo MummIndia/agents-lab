@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-MAX_RUNS="${1:-3}"
+MAX_RUNS="${1:-6}"
 GOAL="${GOAL:-GOAL.md}"
 BRANCH="${BRANCH:-agent/auto}"
 NOTES="SHARED_TASK_NOTES.md"
@@ -22,12 +22,14 @@ for i in $(seq 1 "$MAX_RUNS"); do
   echo "=== Iteration $i / $MAX_RUNS ==="
   PROMPT="Objectif global : lis le fichier $GOAL.
 Contexte des iterations precedentes : lis le fichier $NOTES.
-Travaille UNE etape concrete vers l'objectif. Ecris/edite le code, lance les tests.
-Mets a jour $NOTES (fait / reste a faire).
-Si l'objectif est ENTIEREMENT atteint et verifie, ecris sur une ligne seule: OBJECTIF_ATTEINT
-Ne cree pas de docs inutiles. Ne fais AUCUNE operation git. Reste dans /workspace."
+Le logo de l'association est dans ce dossier (Logo CVN 2050.jpg).
+Python3 est disponible avec matplotlib et reportlab pour generer graphiques et PDF.
+Tu peux utiliser la recherche web (WebSearch/WebFetch) pour verifier les donnees publiques.
+Travaille UNE etape concrete vers l'objectif. Mets a jour $NOTES (fait / reste a faire).
+Si l'objectif est ENTIEREMENT atteint et verifie (le PDF existe et est correct), ecris sur une ligne seule: OBJECTIF_ATTEINT
+Ne fais AUCUNE operation git. Reste dans /workspace."
   set +e
-  OUT="$(claude -p "$PROMPT" --dangerously-skip-permissions --allowedTools "Read,Write,Edit,Bash,Grep,Glob" 2>&1)"
+  OUT="$(claude -p "$PROMPT" --dangerously-skip-permissions --allowedTools "Read,Write,Edit,Bash,Grep,Glob,WebSearch,WebFetch" 2>&1)"
   set -e
   echo "$OUT" | tee "loop-iteration-$i.log"
   if echo "$OUT" | grep -q "OBJECTIF_ATTEINT"; then
@@ -37,8 +39,5 @@ Ne cree pas de docs inutiles. Ne fais AUCUNE operation git. Reste dans /workspac
   git add -A; git commit -m "agent: iteration $i" --allow-empty >/dev/null
   echo "Iteration $i sauvegardee."
 done
-
 echo ""
-echo "Inspecter : git log --oneline ; git diff main..$BRANCH"
-echo "Garder    : git checkout main && git merge $BRANCH"
-echo "Jeter     : git checkout main && git branch -D $BRANCH"
+echo "Inspecter : git log --oneline ; ls -la"
