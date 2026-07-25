@@ -20,8 +20,9 @@ service-account*.json
 .idea/
 
 # Sorties d'execution (regenerables)
+# SHARED_TASK_NOTES.md n'est PAS ignore ici : generate_pdf.py y renvoie pour la
+# tracabilite des sources, c'est la piste d'audit du document publie.
 loop-iteration-*.log
-SHARED_TASK_NOTES.md
 *.log
 
 # Fichiers temporaires
