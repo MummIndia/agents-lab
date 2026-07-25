@@ -1,0 +1,33 @@
+# Secrets et configuration locale.
+# Ce depot n'a pas encore de remote : ces regles sont la pour que le jour ou
+# il en recoit un, rien de sensible ne parte avec le premier push.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+credentials*.json
+client_secret*.json
+service-account*.json
+*token*.json
+.netrc
+
+# Configuration d'outils locaux (chemins et reglages propres a la machine)
+.claude/
+.vscode/
+.idea/
+
+# Sorties d'execution (regenerables)
+loop-iteration-*.log
+SHARED_TASK_NOTES.md
+*.log
+
+# Fichiers temporaires
+*.tmp
+*~
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
