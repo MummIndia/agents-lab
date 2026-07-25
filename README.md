@@ -1,7 +1,7 @@
 # agents-lab — plaidoyer documenté, produit en boucle
 
-Atelier de production de documents de plaidoyer **chiffrés et sourcés**, pour
-l'association **Cévennes 2050**.
+Atelier personnel de production de documents de plaidoyer **chiffrés et
+sourcés**, assisté par un agent (Claude Code).
 
 Le principe : on écrit un objectif précis et vérifiable dans `GOAL.md`, puis un
 agent travaille par itérations jusqu'à l'atteindre, en gardant ses notes d'une
@@ -10,7 +10,9 @@ document où chaque chiffre porte sa source et son millésime.
 
 **Premier livrable :** `Plaidoyer_logement_Cevennes2050.pdf` — l'ampleur des
 logements non occupés à l'année à Lasalle et Saint-Jean-du-Gard (Gard), à partir
-des données INSEE, avec des leviers d'action communaux.
+des données INSEE, avec des leviers d'action communaux. Il a été réalisé pour
+l'association Cévennes 2050, qui en est la destinataire ; le dépôt et la méthode
+qu'il documente sont un travail personnel.
 
 ## Contenu
 
@@ -46,15 +48,15 @@ Deux licences, selon la nature des fichiers :
   [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.fr), texte
   intégral dans [`LICENSE`](LICENSE).
   Vous pouvez les reprendre, les adapter et les diffuser, y compris à des fins
-  commerciales, à condition de créditer Cévennes 2050 et d'indiquer si vous
-  avez apporté des modifications.
+  commerciales, à condition de créditer l'auteur (MummIndia —
+  github.com/MummIndia) et d'indiquer si vous avez apporté des modifications.
 
 - **Scripts** (`ecc-loop.sh`, `generate_pdf.py`) —
   [MIT](LICENSE-MIT). Faites-en ce que vous voulez.
 
 **Exception : le logo et le nom « Cévennes 2050 » ne sont pas couverts.** Ils
-identifient l'association et restent sa propriété. Reprenez la méthode et les
-données, pas la signature — remplacez le logo par le vôtre.
+appartiennent à l'association et ne sont pas à moi de les licencier. Reprenez la
+méthode et les données, pas la signature — remplacez le logo par le vôtre.
 
 Les données INSEE, DVF et CEREMA citées relèvent de leurs licences respectives
 (licence ouverte Etalab pour l'essentiel) et restent attribuables à leurs
